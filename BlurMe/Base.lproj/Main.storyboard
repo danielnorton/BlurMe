@@ -4,6 +4,7 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
         <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--Navigation Controller-->
@@ -34,26 +35,58 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KGw-hU-4n9">
-                                <rect key="frame" x="170" y="210" width="260" height="180"/>
-                                <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aWC-g9-RMd">
+                                <rect key="frame" x="20" y="200" width="560" height="90"/>
+                                <color key="backgroundColor" red="1" green="0.0" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="260" id="JW9-zF-i14"/>
-                                    <constraint firstAttribute="height" constant="180" id="XEm-c7-VOb"/>
+                                    <constraint firstAttribute="width" constant="260" id="9C1-FU-wxx"/>
+                                    <constraint firstAttribute="height" constant="90" id="IAN-vO-H0h"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="90" id="zzK-VJ-oYh"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="100"/>
-                                <state key="normal" title="Tap!">
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="70"/>
+                                <state key="normal" title="Pure Code">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="9C1-FU-wxx"/>
+                                    </mask>
+                                </variation>
+                                <connections>
+                                    <action selector="didTapCode:" destination="BYZ-38-t0r" eventType="touchUpInside" id="jns-iC-oUJ"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KGw-hU-4n9">
+                                <rect key="frame" x="20" y="310" width="560" height="90"/>
+                                <color key="backgroundColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="260" id="JW9-zF-i14"/>
+                                    <constraint firstAttribute="height" constant="90" id="XEm-c7-VOb"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="70"/>
+                                <state key="normal" title="Storyboard">
+                                    <color key="titleColor" red="0.029877807510239485" green="0.33583627443848907" blue="0.84826192496229269" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="JW9-zF-i14"/>
+                                    </mask>
+                                </variation>
                                 <connections>
                                     <segue destination="gP4-Bg-WeX" kind="presentation" modalPresentationStyle="overCurrentContext" id="5yY-DM-Ypk"/>
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" red="0.0" green="0.50196081400000003" blue="0.25098040700000002" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" red="0.0" green="0.50196081400000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="KGw-hU-4n9" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="AMD-Ha-L39"/>
+                            <constraint firstItem="aWC-g9-RMd" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="-55" id="6jJ-II-CcR"/>
+                            <constraint firstItem="KGw-hU-4n9" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="55" id="AMD-Ha-L39"/>
                             <constraint firstItem="KGw-hU-4n9" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="HzK-Gi-h7W"/>
+                            <constraint firstAttribute="trailing" secondItem="KGw-hU-4n9" secondAttribute="trailing" constant="20" id="JZc-wo-xNT"/>
+                            <constraint firstItem="aWC-g9-RMd" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="LY8-WT-f0T"/>
+                            <constraint firstItem="aWC-g9-RMd" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="hL8-5H-GuG"/>
+                            <constraint firstItem="KGw-hU-4n9" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="20" id="rjO-b0-S3d"/>
+                            <constraint firstItem="aWC-g9-RMd" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="tD7-0b-cFq"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="sLl-Ac-Cll"/>
@@ -75,19 +108,19 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aWp-jo-e3B">
-                                <rect key="frame" x="0.0" y="300" width="600" height="300"/>
+                                <rect key="frame" x="0.0" y="245" width="600" height="355"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="UJJ-WF-KDp">
-                                    <rect key="frame" x="0.0" y="0.0" width="600" height="300"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="355"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
                                         <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ivJ-BM-qIk">
-                                            <rect key="frame" x="8" y="192" width="584" height="100"/>
+                                            <rect key="frame" x="0.0" y="255" width="600" height="100"/>
                                             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="yfu-nP-gef">
-                                                <rect key="frame" x="0.0" y="0.0" width="584" height="100"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="600" height="100"/>
                                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Done" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wHe-vx-J9H">
-                                                        <rect key="frame" x="0.0" y="0.0" width="584" height="100"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="600" height="100"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="70"/>
                                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                         <nil key="highlightedColor"/>
@@ -113,16 +146,16 @@
                                         </visualEffectView>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstAttribute="bottom" secondItem="ivJ-BM-qIk" secondAttribute="bottom" constant="8" id="LpI-jP-EYo"/>
-                                        <constraint firstAttribute="trailing" secondItem="ivJ-BM-qIk" secondAttribute="trailing" constant="8" id="TN3-Bg-Xqc"/>
-                                        <constraint firstItem="ivJ-BM-qIk" firstAttribute="leading" secondItem="UJJ-WF-KDp" secondAttribute="leading" constant="8" id="aOf-gM-tHN"/>
+                                        <constraint firstAttribute="bottom" secondItem="ivJ-BM-qIk" secondAttribute="bottom" id="LpI-jP-EYo"/>
+                                        <constraint firstAttribute="trailing" secondItem="ivJ-BM-qIk" secondAttribute="trailing" id="TN3-Bg-Xqc"/>
+                                        <constraint firstItem="ivJ-BM-qIk" firstAttribute="leading" secondItem="UJJ-WF-KDp" secondAttribute="leading" id="aOf-gM-tHN"/>
                                     </constraints>
                                 </view>
                                 <blurEffect style="light"/>
                             </visualEffectView>
                         </subviews>
                         <constraints>
-                            <constraint firstItem="aWp-jo-e3B" firstAttribute="top" secondItem="H6L-Vb-lcU" secondAttribute="centerY" id="BPh-bP-CKX"/>
+                            <constraint firstItem="aWp-jo-e3B" firstAttribute="top" secondItem="H6L-Vb-lcU" secondAttribute="centerY" constant="-55" id="BPh-bP-CKX"/>
                             <constraint firstItem="aWp-jo-e3B" firstAttribute="leading" secondItem="H6L-Vb-lcU" secondAttribute="leading" id="Rkd-wS-zZD"/>
                             <constraint firstAttribute="trailing" secondItem="aWp-jo-e3B" secondAttribute="trailing" id="afn-6X-X8x"/>
                             <constraint firstItem="NK1-0q-yhN" firstAttribute="top" secondItem="aWp-jo-e3B" secondAttribute="bottom" id="yEQ-IF-NNv"/>
