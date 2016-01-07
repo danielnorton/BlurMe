@@ -80,25 +80,42 @@
                                     <rect key="frame" x="0.0" y="0.0" width="600" height="300"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
-                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vA7-Rg-PEn">
+                                        <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ivJ-BM-qIk">
                                             <rect key="frame" x="8" y="192" width="584" height="100"/>
-                                            <color key="backgroundColor" red="0.0" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="yfu-nP-gef">
+                                                <rect key="frame" x="0.0" y="0.0" width="584" height="100"/>
+                                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Done" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wHe-vx-J9H">
+                                                        <rect key="frame" x="0.0" y="0.0" width="584" height="100"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="70"/>
+                                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                                <gestureRecognizers/>
+                                                <constraints>
+                                                    <constraint firstItem="wHe-vx-J9H" firstAttribute="leading" secondItem="yfu-nP-gef" secondAttribute="leading" id="3En-b0-Xdy"/>
+                                                    <constraint firstAttribute="bottom" secondItem="wHe-vx-J9H" secondAttribute="bottom" id="Nwx-S5-9rb"/>
+                                                    <constraint firstItem="wHe-vx-J9H" firstAttribute="top" secondItem="yfu-nP-gef" secondAttribute="top" id="SJg-lQ-1um"/>
+                                                    <constraint firstAttribute="trailing" secondItem="wHe-vx-J9H" secondAttribute="trailing" id="U8M-Iy-Qr1"/>
+                                                </constraints>
+                                                <connections>
+                                                    <outletCollection property="gestureRecognizers" destination="1w0-E1-hbv" appends="YES" id="QEN-ce-79Q"/>
+                                                </connections>
+                                            </view>
                                             <constraints>
-                                                <constraint firstAttribute="height" constant="100" id="b4c-Kz-Q5B"/>
+                                                <constraint firstAttribute="height" constant="100" id="So3-M0-nJm"/>
                                             </constraints>
-                                            <fontDescription key="fontDescription" type="system" pointSize="70"/>
-                                            <state key="normal" title="done">
-                                                <color key="titleColor" red="1" green="0.40000000600000002" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
-                                            </state>
-                                            <connections>
-                                                <action selector="didTapDone:" destination="gP4-Bg-WeX" eventType="touchUpInside" id="s3x-oG-aBj"/>
-                                            </connections>
-                                        </button>
+                                            <vibrancyEffect>
+                                                <blurEffect style="light"/>
+                                            </vibrancyEffect>
+                                        </visualEffectView>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstItem="vA7-Rg-PEn" firstAttribute="leading" secondItem="UJJ-WF-KDp" secondAttribute="leading" constant="8" id="GHA-yM-luj"/>
-                                        <constraint firstAttribute="trailing" secondItem="vA7-Rg-PEn" secondAttribute="trailing" constant="8" id="Uru-Uc-Q2d"/>
-                                        <constraint firstAttribute="bottom" secondItem="vA7-Rg-PEn" secondAttribute="bottom" constant="8" id="g7J-aW-cQC"/>
+                                        <constraint firstAttribute="bottom" secondItem="ivJ-BM-qIk" secondAttribute="bottom" constant="8" id="LpI-jP-EYo"/>
+                                        <constraint firstAttribute="trailing" secondItem="ivJ-BM-qIk" secondAttribute="trailing" constant="8" id="TN3-Bg-Xqc"/>
+                                        <constraint firstItem="ivJ-BM-qIk" firstAttribute="leading" secondItem="UJJ-WF-KDp" secondAttribute="leading" constant="8" id="aOf-gM-tHN"/>
                                     </constraints>
                                 </view>
                                 <blurEffect style="light"/>
@@ -113,6 +130,11 @@
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1Ll-cr-bfH" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="1w0-E1-hbv">
+                    <connections>
+                        <action selector="didTapDone:" destination="gP4-Bg-WeX" id="tvR-hK-JEW"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="1022" y="375"/>
         </scene>
