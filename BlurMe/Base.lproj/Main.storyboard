@@ -1,13 +1,31 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="ANJ-3r-CGS">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+        <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
     </dependencies>
     <scenes>
+        <!--Navigation Controller-->
+        <scene sceneID="nui-fG-z7r">
+            <objects>
+                <navigationController id="ANJ-3r-CGS" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="w3b-Zd-RFl">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="cpw-gq-PKa"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="HIo-j5-x0T" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="64" y="-391"/>
+        </scene>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="BlurMe" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -15,11 +33,88 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KGw-hU-4n9">
+                                <rect key="frame" x="170" y="210" width="260" height="180"/>
+                                <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="260" id="JW9-zF-i14"/>
+                                    <constraint firstAttribute="height" constant="180" id="XEm-c7-VOb"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="100"/>
+                                <state key="normal" title="Tap!">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <segue destination="gP4-Bg-WeX" kind="presentation" modalPresentationStyle="overCurrentContext" id="5yY-DM-Ypk"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="0.0" green="0.50196081400000003" blue="0.25098040700000002" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="KGw-hU-4n9" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="AMD-Ha-L39"/>
+                            <constraint firstItem="KGw-hU-4n9" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="HzK-Gi-h7W"/>
+                        </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="sLl-Ac-Cll"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="266" y="375"/>
+        </scene>
+        <!--Blurred View Controller-->
+        <scene sceneID="bda-Az-49J">
+            <objects>
+                <viewController id="gP4-Bg-WeX" customClass="BlurredViewController" customModule="BlurMe" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="uKQ-j8-VOK"/>
+                        <viewControllerLayoutGuide type="bottom" id="NK1-0q-yhN"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="H6L-Vb-lcU">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aWp-jo-e3B">
+                                <rect key="frame" x="0.0" y="300" width="600" height="300"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="UJJ-WF-KDp">
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="300"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                    <subviews>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vA7-Rg-PEn">
+                                            <rect key="frame" x="8" y="192" width="584" height="100"/>
+                                            <color key="backgroundColor" red="0.0" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="100" id="b4c-Kz-Q5B"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="system" pointSize="70"/>
+                                            <state key="normal" title="done">
+                                                <color key="titleColor" red="1" green="0.40000000600000002" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                            </state>
+                                            <connections>
+                                                <action selector="didTapDone:" destination="gP4-Bg-WeX" eventType="touchUpInside" id="s3x-oG-aBj"/>
+                                            </connections>
+                                        </button>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="vA7-Rg-PEn" firstAttribute="leading" secondItem="UJJ-WF-KDp" secondAttribute="leading" constant="8" id="GHA-yM-luj"/>
+                                        <constraint firstAttribute="trailing" secondItem="vA7-Rg-PEn" secondAttribute="trailing" constant="8" id="Uru-Uc-Q2d"/>
+                                        <constraint firstAttribute="bottom" secondItem="vA7-Rg-PEn" secondAttribute="bottom" constant="8" id="g7J-aW-cQC"/>
+                                    </constraints>
+                                </view>
+                                <blurEffect style="light"/>
+                            </visualEffectView>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="aWp-jo-e3B" firstAttribute="top" secondItem="H6L-Vb-lcU" secondAttribute="centerY" id="BPh-bP-CKX"/>
+                            <constraint firstItem="aWp-jo-e3B" firstAttribute="leading" secondItem="H6L-Vb-lcU" secondAttribute="leading" id="Rkd-wS-zZD"/>
+                            <constraint firstAttribute="trailing" secondItem="aWp-jo-e3B" secondAttribute="trailing" id="afn-6X-X8x"/>
+                            <constraint firstItem="NK1-0q-yhN" firstAttribute="top" secondItem="aWp-jo-e3B" secondAttribute="bottom" id="yEQ-IF-NNv"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1Ll-cr-bfH" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1022" y="375"/>
         </scene>
     </scenes>
 </document>
