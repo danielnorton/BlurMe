@@ -11,7 +11,7 @@ import UIKit
 
 class BlurredViewController : UIViewController {
     
-    @IBAction func didTapDone(sender: UIGestureRecognizer) {
+    @IBAction func didTapDone(sender: UIButton) {
         
         presentingViewController?.dismissViewControllerAnimated(true, completion: nil)
     }

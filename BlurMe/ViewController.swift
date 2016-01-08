@@ -14,7 +14,7 @@ class ViewController: UIViewController {
     // MARK: - UIViewController
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+
         for case let button as UIButton in view.subviews {
             
             if let label = button.titleLabel {
@@ -85,11 +85,11 @@ class ViewController: UIViewController {
             , constant: -55.0))
         
         
-        let labelView = UIVisualEffectView(effect: UIVibrancyEffect(forBlurEffect: UIBlurEffect(style: .Light)))
-        labelView.translatesAutoresizingMaskIntoConstraints = false
-        subview.contentView.addSubview(labelView)
+        let buttonView = UIVisualEffectView(effect: UIVibrancyEffect(forBlurEffect: UIBlurEffect(style: .Light)))
+        buttonView.translatesAutoresizingMaskIntoConstraints = false
+        subview.contentView.addSubview(buttonView)
         
-        subview.addConstraint(NSLayoutConstraint(item: labelView
+        subview.addConstraint(NSLayoutConstraint(item: buttonView
             , attribute: NSLayoutAttribute.Baseline
             , relatedBy: .Equal
             , toItem: subview
@@ -97,7 +97,7 @@ class ViewController: UIViewController {
             , multiplier: 1.0
             , constant: 0.0))
         
-        subview.addConstraint(NSLayoutConstraint(item: labelView
+        subview.addConstraint(NSLayoutConstraint(item: buttonView
             , attribute: NSLayoutAttribute.Leading
             , relatedBy: .Equal
             , toItem: subview
@@ -105,7 +105,7 @@ class ViewController: UIViewController {
             , multiplier: 1.0
             , constant: 0.0))
         
-        subview.addConstraint(NSLayoutConstraint(item: labelView
+        subview.addConstraint(NSLayoutConstraint(item: buttonView
             , attribute: NSLayoutAttribute.Trailing
             , relatedBy: .Equal
             , toItem: subview
@@ -113,7 +113,7 @@ class ViewController: UIViewController {
             , multiplier: 1.0
             , constant: 0.0))
         
-        labelView.addConstraint(NSLayoutConstraint(item: labelView
+        buttonView.addConstraint(NSLayoutConstraint(item: buttonView
             , attribute: NSLayoutAttribute.Height
             , relatedBy: .Equal
             , toItem: nil
@@ -122,46 +122,46 @@ class ViewController: UIViewController {
             , constant: 100.0))
         
         
-        let label = UILabel()
-        label.text = "Done"
-        label.font = UIFont.systemFontOfSize(70.0)
-        label.textAlignment = .Center
-        label.translatesAutoresizingMaskIntoConstraints = false
-        labelView.contentView.addSubview(label)
+        let button = UIButton(type: .System)
+        button.setTitle("Done", forState: .Normal)
+        button.titleLabel!.font = UIFont.systemFontOfSize(70.0)
+        button.translatesAutoresizingMaskIntoConstraints = false
+        button.addTarget(self, action: "didTapDone:", forControlEvents: .TouchUpInside)
+        buttonView.contentView.addSubview(button)
         
-        labelView.addConstraint(NSLayoutConstraint(item: label
+        buttonView.addConstraint(NSLayoutConstraint(item: button
             , attribute: NSLayoutAttribute.Baseline
             , relatedBy: .Equal
-            , toItem: labelView
+            , toItem: buttonView
             , attribute: .Baseline
             , multiplier: 1.0
             , constant: 0.0))
         
-        labelView.addConstraint(NSLayoutConstraint(item: label
+        buttonView.addConstraint(NSLayoutConstraint(item: button
             , attribute: NSLayoutAttribute.Leading
             , relatedBy: .Equal
-            , toItem: labelView
+            , toItem: buttonView
             , attribute: .Leading
             , multiplier: 1.0
             , constant: 0.0))
         
-        labelView.addConstraint(NSLayoutConstraint(item: label
+        buttonView.addConstraint(NSLayoutConstraint(item: button
             , attribute: NSLayoutAttribute.Trailing
             , relatedBy: .Equal
-            , toItem: labelView
+            , toItem: buttonView
             , attribute: .Trailing
             , multiplier: 1.0
             , constant: 0.0))
         
-        labelView.addConstraint(NSLayoutConstraint(item: label
+        buttonView.addConstraint(NSLayoutConstraint(item: button
             , attribute: NSLayoutAttribute.Top
             , relatedBy: .Equal
-            , toItem: labelView
+            , toItem: buttonView
             , attribute: .Top
             , multiplier: 1.0
             , constant: 0.0))
         
-        labelView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: "didTapDone:"))
+        buttonView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: "didTapDone:"))
         self.presentViewController(controller, animated: true, completion: nil)
     }
 }
